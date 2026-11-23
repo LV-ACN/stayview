@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next.js
+.next/
+out/
+
+# testing
+coverage/
+test-results/
+playwright-report/
+
+# production
+build/
+dist/
+
+# misc
+.DS_Store
+*.pem
+.env
+.env*.local
+
+# Per-team Jira/Figma pointers (use workshop-config.example.json as template)
+docs/workshop-config.local.json
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/

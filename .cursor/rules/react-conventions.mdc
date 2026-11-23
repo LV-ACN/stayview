@@ -1,0 +1,35 @@
+---
+description: React and Next.js conventions for the StayView hotel application
+globs: ["app/**/*.tsx", "components/**/*.tsx"]
+alwaysApply: false
+---
+
+# React & Next.js Conventions
+
+## Component Structure
+- Use function declarations for page components, named exports for shared components
+- Client components must include 'use client' directive at the top of the file
+- Server components are the default in the app directory — only add 'use client' when needed (state, effects, event handlers, browser APIs)
+- Co-locate component-specific types in the same file; shared types go in `types/index.ts`
+
+## Naming
+- Components: PascalCase (`RoomCard.tsx`, `FilterBar.tsx`)
+- Utilities/hooks: camelCase (`useRoomFilters.ts`, `formatCurrency.ts`)
+- Pages: `page.tsx` inside route directories following Next.js App Router conventions
+- Test files: `ComponentName.test.tsx` co-located next to the component
+
+## Styling
+- Use Tailwind CSS utility classes exclusively — no CSS modules or styled-components
+- Use the `clsx` utility for conditional classes
+- Responsive breakpoints: mobile-first (`sm:`, `md:`, `lg:`)
+- Brand colors via `brand-*` tokens defined in tailwind.config.ts
+- Shared component classes (`.btn-primary`, `.container-page`) are in globals.css `@layer components`
+
+## State Management
+- Local state with `useState` for component-specific state
+- URL search params for filter/sort state that should be shareable
+- No global state library — prop drilling is acceptable for this app's scale
+
+## Imports
+- Use `@/` path alias for all imports from the project root
+- Group imports: React/Next → third-party → project libs → components → types

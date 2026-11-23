@@ -1,0 +1,23 @@
+---
+description: TypeScript strictness and conventions for the StayView project
+globs: ["**/*.ts", "**/*.tsx"]
+alwaysApply: true
+---
+
+# TypeScript Standards
+
+## Strict Mode
+- `strict: true` is enabled in tsconfig — never use `any` type, use `unknown` and narrow instead
+- Always provide explicit return types for exported functions
+- Use `satisfies` operator to validate object shapes without widening types
+
+## Type Patterns
+- Prefer `interface` for object shapes that may be extended, `type` for unions, intersections, and aliases
+- Use discriminated unions for state variants (e.g., loading/success/error)
+- Avoid `enum` — use `const` objects with `as const` or union literal types instead
+- Re-export all shared types from `types/index.ts`
+
+## Nullability
+- Prefer explicit `| undefined` over optional properties when the absence is semantically meaningful
+- Use nullish coalescing (`??`) over logical OR (`||`) for default values
+- Never use non-null assertion (`!`) — narrow with type guards instead

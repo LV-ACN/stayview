@@ -1,0 +1,39 @@
+{
+  "page": "/rooms",
+  "measuredAt": "2026-10-28T14:30:00Z",
+  "device": "Moto G Power (lab)",
+  "connection": "4G",
+  "metrics": {
+    "LCP": {
+      "value": 1.8,
+      "unit": "seconds",
+      "threshold": 2.5,
+      "rating": "good"
+    },
+    "CLS": {
+      "value": 0.04,
+      "unit": "score",
+      "threshold": 0.1,
+      "rating": "good"
+    },
+    "INP": {
+      "value": 120,
+      "unit": "milliseconds",
+      "threshold": 200,
+      "rating": "good"
+    },
+    "FCP": {
+      "value": 1.2,
+      "unit": "seconds",
+      "threshold": 1.8,
+      "rating": "good"
+    },
+    "TTFB": {
+      "value": 0.4,
+      "unit": "seconds",
+      "threshold": 0.8,
+      "rating": "good"
+    }
+  },
+  "notes": "Baseline measured on current room listing page before JIRA-4521 redesign. Any regression in LCP, CLS, or INP must be investigated before merging."
+}
